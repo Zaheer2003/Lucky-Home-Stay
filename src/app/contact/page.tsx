@@ -41,7 +41,7 @@ const ContactPage = () => {
       <header className="py-20 bg-primary text-primary-foreground text-center">
         <div className="container mx-auto">
           <h1 className="text-5xl font-extrabold">Contact Us</h1>
-          <p className="text-xl mt-4">We'd love to hear from you. Get in touch with us.</p>
+          <p className="text-xl mt-4">We&apos;d love to hear from you. Get in touch with us.</p>
         </div>
       </header>
 

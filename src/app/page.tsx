@@ -106,7 +106,7 @@ export default function Home() {
                     </Avatar>
                     <p className="ml-4 font-semibold">John Doe</p>
                   </div>
-                  <p className="text-muted-foreground">"An amazing experience! The rooms were clean, the staff was friendly, and the views were incredible. Highly recommended!"</p>
+                  <p className="text-muted-foreground">&quot;An amazing experience! The rooms were clean, the staff was friendly, and the views were incredible. Highly recommended!&quot;</p>
                 </CardContent>
               </Card>
               <Card>
@@ -118,7 +118,7 @@ export default function Home() {
                     </Avatar>
                     <p className="ml-4 font-semibold">Jane Smith</p>
                   </div>
-                  <p className="text-muted-foreground">"A perfect getaway from the city. The serene environment and top-notch service made our stay unforgettable."</p>
+                  <p className="text-muted-foreground">&quot;A perfect getaway from the city. The serene environment and top-notch service made our stay unforgettable.&quot;</p>
                 </CardContent>
               </Card>
               <Card>
@@ -130,7 +130,7 @@ export default function Home() {
                     </Avatar>
                     <p className="ml-4 font-semibold">Peter Jones</p>
                   </div>
-                  <p className="text-muted-foreground">"I loved my stay at Lucky HomeStay. The attention to detail and the warm hospitality were exceptional."</p>
+                  <p className="text-muted-foreground">&quot;I loved my stay at Lucky HomeStay. The attention to detail and the warm hospitality were exceptional.&quot;</p>
                 </CardContent>
               </Card>
             </div>
