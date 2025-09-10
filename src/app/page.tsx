@@ -1,103 +1,153 @@
+import Link from "next/link";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="flex flex-col min-h-screen">
+      <main className="flex-grow">
+        {/* Hero Section */}
+        <section className="relative h-[60vh] flex items-center justify-center text-center text-white">
+          <Image
+            src="/hero-bg.jpg"
+            alt="Lucky HomeStay Background"
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+            className="absolute inset-0 z-0"
+          />
+          <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
+          <div className="relative z-20 p-4 md:p-8">
+            <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-4 font-serif">
+              Welcome to Lucky HomeStay
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+              Experience unparalleled comfort and tranquility in our beautiful homes. Your perfect getaway awaits.
+            </p>
+            <Button asChild size="lg">
+              <Link href="/rooms">Explore Our Rooms</Link>
+            </Button>
+          </div>
+        </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+        {/* About Us Section */}
+        <section className="py-20 bg-background">
+          <div className="container mx-auto text-center">
+            <h2 className="text-4xl font-bold mb-6 text-primary">About Us</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12">
+              Lucky HomeStay offers a unique blend of comfort, style, and hospitality. Our properties are designed to provide a serene and luxurious experience, making you feel right at home.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Cozy Rooms</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p>Beautifully designed rooms with all the modern amenities to ensure a comfortable stay.</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Stunning Views</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p>Enjoy breathtaking views from your room and our common areas.</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Excellent Service</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p>Our dedicated staff is here to cater to your every need, ensuring a memorable experience.</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Our Services Section */}
+        <section className="py-20 bg-muted">
+          <div className="container mx-auto text-center">
+            <h2 className="text-4xl font-bold mb-12 text-primary">Our Services</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="flex flex-col items-center">
+                <Image src="/file.svg" alt="24/7 Support" width={80} height={80} />
+                <h3 className="text-2xl font-semibold mt-4">24/7 Support</h3>
+                <p className="text-muted-foreground mt-2">We are here to help you anytime.</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <Image src="/window.svg" alt="Free Wi-Fi" width={80} height={80} />
+                <h3 className="text-2xl font-semibold mt-4">Free Wi-Fi</h3>
+                <p className="text-muted-foreground mt-2">Stay connected with high-speed internet.</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <Image src="/garden.jpg" alt="Breakfast" width={80} height={80} className="rounded-full" />
+                <h3 className="text-2xl font-semibold mt-4">Breakfast</h3>
+                <p className="text-muted-foreground mt-2">Enjoy a delicious complimentary breakfast.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="py-20 bg-background">
+          <div className="container mx-auto text-center">
+            <h2 className="text-4xl font-bold mb-12 text-primary">What Our Guests Say</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="flex items-center mb-4">
+                    <Avatar>
+                      <AvatarImage src="https://github.com/shadcn.png" />
+                      <AvatarFallback>CN</AvatarFallback>
+                    </Avatar>
+                    <p className="ml-4 font-semibold">John Doe</p>
+                  </div>
+                  <p className="text-muted-foreground">"An amazing experience! The rooms were clean, the staff was friendly, and the views were incredible. Highly recommended!"</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="flex items-center mb-4">
+                    <Avatar>
+                      <AvatarImage src="https://github.com/shadcn.png" />
+                      <AvatarFallback>CN</AvatarFallback>
+                    </Avatar>
+                    <p className="ml-4 font-semibold">Jane Smith</p>
+                  </div>
+                  <p className="text-muted-foreground">"A perfect getaway from the city. The serene environment and top-notch service made our stay unforgettable."</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="flex items-center mb-4">
+                    <Avatar>
+                      <AvatarImage src="https://github.com/shadcn.png" />
+                      <AvatarFallback>CN</AvatarFallback>
+                    </Avatar>
+                    <p className="ml-4 font-semibold">Peter Jones</p>
+                  </div>
+                  <p className="text-muted-foreground">"I loved my stay at Lucky HomeStay. The attention to detail and the warm hospitality were exceptional."</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Call to Action Section */}
+        <section className="py-20 bg-primary text-primary-foreground">
+          <div className="container mx-auto text-center">
+            <h2 className="text-4xl font-bold mb-4">Ready for Your Next Adventure?</h2>
+            <p className="text-xl mb-8">Book your stay with us and create memories that will last a lifetime.</p>
+            <Button asChild size="lg" variant="secondary">
+              <Link href="/book-room">Book Now</Link>
+            </Button>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
