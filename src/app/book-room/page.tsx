@@ -13,7 +13,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { cn } from "@/lib/utils";
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
-import { mockRooms } from '@/app/rooms/page';
+import { mockRooms } from '@/lib/mock-data';
 
 const RoomBookingPage = () => {
   const searchParams = useSearchParams();
